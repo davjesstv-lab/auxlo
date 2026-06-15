@@ -47,19 +47,26 @@ See [`.env.example`](./.env.example). Required for a real instance:
 | `NEXT_PUBLIC_SUPABASE_REGION` | `ca-central-1` (or your Canadian region) |
 | `ANTHROPIC_API_KEY` | Anthropic API key |
 | `ANTHROPIC_MODEL` | optional; defaults to `claude-opus-4-8` |
+| `SUPABASE_SERVICE_ROLE_KEY` | optional; enables the in-app **Users & roles** admin screen (Project Settings → API → service_role) |
 
 Redeploy after setting them — with these present, the app leaves demo mode and
 enforces authentication.
 
-### 4. Onboard the client (create org + users)
-There is intentionally no in-app way to create the first organization or assign
-roles. Do it once via SQL:
+### 4. Onboard the client (create org + first admin)
+The first organization and first admin must be seeded once via SQL (there is no
+way to bootstrap them from an empty database in-app):
 
-1. Invite the client's users: Supabase → **Authentication → Users → Invite user**
+1. Invite the first admin: Supabase → **Authentication → Users → Invite user**
    (they set a password via the email link).
 2. In the SQL editor, run [`supabase/seed/onboard.sql`](./supabase/seed/onboard.sql)
    after replacing the placeholders — it creates the organization and attaches
-   each user with a role (`admin` / `practitioner` / `client`).
+   that user as `admin`.
+
+After that, **everything else is done in-app**: with `SUPABASE_SERVICE_ROLE_KEY`
+set, the admin uses **Users & roles** to invite the rest of the client's team and
+assign `admin` / `practitioner` / `client` — no more SQL. (Without the service
+role key, keep using `onboard.sql` for additional users.)
+
 3. The credentialed reviewer then records their credential in the app under
    **Audit prep → Reviewers**; that reviewer is required to confirm findings
    and approve artifacts.

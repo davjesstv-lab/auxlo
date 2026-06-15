@@ -11,7 +11,29 @@
     "vendors": "Fournisseurs",
     "inventory": "Inventaire des données",
     "evidence": "Preuves",
-    "auditPrep": "Préparation à l'audit"
+    "auditPrep": "Préparation à l'audit",
+    "admin": "Utilisateurs et rôles"
+  },
+  "admin": {
+    "title": "Utilisateurs et rôles",
+    "subtitle": "Gérez qui peut accéder à cette organisation et ce qu'ils peuvent faire.",
+    "notConfigured": "La gestion des utilisateurs nécessite la clé de rôle de service Supabase (SUPABASE_SERVICE_ROLE_KEY). En attendant, intégrez via supabase/seed/onboard.sql.",
+    "demoNotice": "Mode démo — connectez Supabase pour gérer les utilisateurs.",
+    "colUser": "Utilisateur",
+    "colRole": "Rôle",
+    "noUsers": "Aucun utilisateur dans cette organisation pour l'instant.",
+    "save": "Enregistrer",
+    "remove": "Retirer",
+    "removeConfirm": "Retirer cet utilisateur de l'organisation?",
+    "inviteTitle": "Inviter un utilisateur",
+    "inviteHint": "Envoie un courriel d'invitation (si l'utilisateur est nouveau) et le rattache à cette organisation.",
+    "inviteEmail": "Courriel",
+    "invite": "Inviter",
+    "roles": {
+      "admin": "Administrateur",
+      "practitioner": "Praticien",
+      "client": "Client"
+    }
   },
   "topbar": {
     "engagementStatus": "Statut du mandat",

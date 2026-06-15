@@ -11,7 +11,29 @@
     "vendors": "Vendors",
     "inventory": "Data inventory",
     "evidence": "Evidence",
-    "auditPrep": "Audit prep"
+    "auditPrep": "Audit prep",
+    "admin": "Users & roles"
+  },
+  "admin": {
+    "title": "Users & roles",
+    "subtitle": "Manage who can access this organization and what they can do.",
+    "notConfigured": "User management requires the Supabase service role key (SUPABASE_SERVICE_ROLE_KEY). Until it is set, onboard via supabase/seed/onboard.sql.",
+    "demoNotice": "Demo mode — connect Supabase to manage users.",
+    "colUser": "User",
+    "colRole": "Role",
+    "noUsers": "No users in this organization yet.",
+    "save": "Save",
+    "remove": "Remove",
+    "removeConfirm": "Remove this user from the organization?",
+    "inviteTitle": "Invite a user",
+    "inviteHint": "Sends an invite email (if the user is new) and attaches them to this organization.",
+    "inviteEmail": "Email",
+    "invite": "Invite",
+    "roles": {
+      "admin": "Admin",
+      "practitioner": "Practitioner",
+      "client": "Client"
+    }
   },
   "topbar": {
     "engagementStatus": "Engagement status",

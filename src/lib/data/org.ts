@@ -48,6 +48,15 @@ export async function requirePractitioner() {
   return ctx;
 }
 
+/** Like requireOrg, but requires the admin role (organization management). */
+export async function requireAdmin() {
+  const ctx = await requireOrg();
+  if (ctx.role !== "admin") {
+    throw new Error("This action requires an organization administrator.");
+  }
+  return ctx;
+}
+
 /** Returns the current user's role, or null when unauthenticated/unconfigured.
  * Non-throwing — use for conditionally rendering practitioner-only controls. */
 export async function getCurrentRole(): Promise<UserRole | null> {

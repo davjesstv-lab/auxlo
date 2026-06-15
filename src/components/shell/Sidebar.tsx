@@ -11,7 +11,8 @@ type NavItem = {
     | "vendors"
     | "inventory"
     | "evidence"
-    | "auditPrep";
+    | "auditPrep"
+    | "admin";
   href: string;
 };
 
@@ -25,8 +26,11 @@ const NAV_ITEMS: NavItem[] = [
   { key: "auditPrep", href: "/audit-prep" },
 ];
 
-export function Sidebar() {
+export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
   const t = useTranslations("nav");
+  const items: NavItem[] = isAdmin
+    ? [...NAV_ITEMS, { key: "admin", href: "/admin" }]
+    : NAV_ITEMS;
   const tApp = useTranslations("app");
   const pathname = usePathname();
 
@@ -52,7 +56,7 @@ export function Sidebar() {
       </p>
 
       <nav className="mt-3 flex flex-col gap-1">
-        {NAV_ITEMS.map((item) => {
+        {items.map((item) => {
           const isActive =
             item.href === "/"
               ? pathname === "/"
