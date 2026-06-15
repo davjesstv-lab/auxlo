@@ -65,7 +65,7 @@ every row to one organization.
 | Phase | Scope | Status |
 | ----- | ----- | ------ |
 | 1 | Foundation: scaffold, design tokens, bilingual setup, Supabase + Canadian region, auth, Organization/Engagement/User tables with RLS, workspace shell | ✅ Done |
-| 2 | Inventory & vendors: DataAsset/Vendor CRUD, ComplianceRule seed data | ⬜ |
+| 2 | Inventory & vendors: DataAsset/Vendor CRUD (hosting region + operator parent domicile + derived jurisdiction), ComplianceRule seed data | ✅ Done |
 | 3 | Exposure engine: DataFlow, two-axis exposure + CLOUD Act rule, quadrant grid | ⬜ |
 | 4 | Findings & assessment: rule evaluation, risk register, finding detail | ⬜ |
 | 5 | AI drafting: Claude API + six artifact generators (en/fr) | ⬜ |

@@ -9,6 +9,7 @@
     "residency": "Carte de résidence des données",
     "risk": "Registre des risques",
     "vendors": "Fournisseurs",
+    "inventory": "Inventaire des données",
     "evidence": "Preuves",
     "auditPrep": "Préparation à l'audit"
   },
@@ -52,6 +53,74 @@
   "placeholder": {
     "comingSoon": "À venir à une étape ultérieure",
     "description": "Cette partie de l'espace de travail est ébauchée et sera développée à une prochaine étape du moteur de programme MapleGuard."
+  },
+  "actions": {
+    "add": "Ajouter",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "back": "Retour"
+  },
+  "enums": {
+    "residency": {
+      "CANADA": "Canada",
+      "UNITED_STATES": "États-Unis",
+      "OTHER": "Autre"
+    },
+    "jurisdiction": {
+      "CANADIAN": "Sous contrôle canadien",
+      "US_PARENT": "Société mère américaine",
+      "FOREIGN": "Étrangère"
+    },
+    "sensitivity": {
+      "ordinary": "Ordinaire",
+      "sensitive": "Sensible",
+      "health": "Santé"
+    },
+    "framework": {
+      "LAW25": "Loi 25",
+      "PIPEDA": "LPRPDE",
+      "PHIPA": "LPRPS"
+    }
+  },
+  "vendors": {
+    "title": "Fournisseurs",
+    "subtitle": "Prestataires de services et exploitants, avec la région d'hébergement et la compétence de l'exploitant.",
+    "empty": "Aucun fournisseur enregistré pour l'instant.",
+    "addTitle": "Ajouter un fournisseur",
+    "editTitle": "Modifier le fournisseur",
+    "demoNotice": "Mode démo — connectez Supabase pour ajouter, modifier ou supprimer des fournisseurs.",
+    "fields": {
+      "name": "Nom",
+      "role": "Rôle",
+      "hostingRegion": "Région d'hébergement physique",
+      "parentDomicile": "Domicile de la société mère",
+      "jurisdiction": "Compétence de l'exploitant",
+      "dueDiligence": "Évaluation de diligence raisonnable au dossier",
+      "notes": "Notes"
+    },
+    "jurisdictionHint": "Déduite de la société mère de l'exploitant, et non du lieu d'hébergement des données.",
+    "cloudActHint": "Un exploitant ayant une société mère américaine est assujetti au CLOUD Act, même s'il héberge au Canada.",
+    "ddOnFile": "Au dossier",
+    "ddMissing": "Manquante",
+    "deleteConfirm": "Supprimer ce fournisseur?"
+  },
+  "inventory": {
+    "title": "Inventaire des données",
+    "subtitle": "Catégories de renseignements personnels que votre organisation détient.",
+    "empty": "Aucun actif de données enregistré pour l'instant.",
+    "addTitle": "Ajouter un actif de données",
+    "editTitle": "Modifier l'actif de données",
+    "demoNotice": "Mode démo — connectez Supabase pour ajouter, modifier ou supprimer des actifs de données.",
+    "fields": {
+      "name": "Nom",
+      "description": "Description",
+      "sensitivity": "Sensibilité",
+      "subjects": "Personnes concernées",
+      "purpose": "Fin / base légale",
+      "retention": "Conservation"
+    }
   },
   "auth": {
     "title": "Connexion à MapleGuard",

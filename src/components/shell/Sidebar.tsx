@@ -9,6 +9,7 @@ type NavItem = {
     | "residency"
     | "risk"
     | "vendors"
+    | "inventory"
     | "evidence"
     | "auditPrep";
   href: string;
@@ -19,6 +20,7 @@ const NAV_ITEMS: NavItem[] = [
   { key: "residency", href: "/residency" },
   { key: "risk", href: "/risk" },
   { key: "vendors", href: "/vendors" },
+  { key: "inventory", href: "/inventory" },
   { key: "evidence", href: "/evidence" },
   { key: "auditPrep", href: "/audit-prep" },
 ];

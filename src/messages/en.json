@@ -9,6 +9,7 @@
     "residency": "Data residency map",
     "risk": "Risk register",
     "vendors": "Vendors",
+    "inventory": "Data inventory",
     "evidence": "Evidence",
     "auditPrep": "Audit prep"
   },
@@ -52,6 +53,74 @@
   "placeholder": {
     "comingSoon": "Coming in a later phase",
     "description": "This part of the workspace is scaffolded and will be built in an upcoming phase of the MapleGuard program engine."
+  },
+  "actions": {
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back"
+  },
+  "enums": {
+    "residency": {
+      "CANADA": "Canada",
+      "UNITED_STATES": "United States",
+      "OTHER": "Other"
+    },
+    "jurisdiction": {
+      "CANADIAN": "Canadian-controlled",
+      "US_PARENT": "US-parent",
+      "FOREIGN": "Foreign"
+    },
+    "sensitivity": {
+      "ordinary": "Ordinary",
+      "sensitive": "Sensitive",
+      "health": "Health"
+    },
+    "framework": {
+      "LAW25": "Law 25",
+      "PIPEDA": "PIPEDA",
+      "PHIPA": "PHIPA"
+    }
+  },
+  "vendors": {
+    "title": "Vendors",
+    "subtitle": "Service providers and operators, with hosting region and operator jurisdiction.",
+    "empty": "No vendors recorded yet.",
+    "addTitle": "Add vendor",
+    "editTitle": "Edit vendor",
+    "demoNotice": "Demo mode — connect Supabase to add, edit, or delete vendors.",
+    "fields": {
+      "name": "Name",
+      "role": "Role",
+      "hostingRegion": "Physical hosting region",
+      "parentDomicile": "Operator parent domicile",
+      "jurisdiction": "Operator jurisdiction",
+      "dueDiligence": "Due-diligence assessment on file",
+      "notes": "Notes"
+    },
+    "jurisdictionHint": "Derived from the operator's corporate parent, not where data is hosted.",
+    "cloudActHint": "A US-parent operator is reachable under the US CLOUD Act even when it hosts in Canada.",
+    "ddOnFile": "On file",
+    "ddMissing": "Missing",
+    "deleteConfirm": "Delete this vendor?"
+  },
+  "inventory": {
+    "title": "Data inventory",
+    "subtitle": "Categories of personal information your organization holds.",
+    "empty": "No data assets recorded yet.",
+    "addTitle": "Add data asset",
+    "editTitle": "Edit data asset",
+    "demoNotice": "Demo mode — connect Supabase to add, edit, or delete data assets.",
+    "fields": {
+      "name": "Name",
+      "description": "Description",
+      "sensitivity": "Sensitivity",
+      "subjects": "Data subjects",
+      "purpose": "Purpose / lawful basis",
+      "retention": "Retention"
+    }
   },
   "auth": {
     "title": "Sign in to MapleGuard",
