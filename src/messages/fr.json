@@ -160,6 +160,74 @@
       "retention": "Conservation"
     }
   },
+  "findings": {
+    "title": "Registre des risques",
+    "subtitle": "Constats indicatifs issus de l'évaluation. Chacun est un signal tant qu'un praticien accrédité ne l'a pas confirmé.",
+    "runAssessment": "Lancer l'évaluation",
+    "demoNotice": "Mode démo — les constats sont évalués en direct et affichés comme indicatifs. Connectez Supabase pour les conserver et les promouvoir.",
+    "empty": "Aucun constat pour l'instant. Lancez une évaluation pour analyser votre programme.",
+    "summary": {
+      "total": "Constats",
+      "indicative": "Indicatifs",
+      "confirmed": "Confirmés"
+    },
+    "status": {
+      "indicative": "Indicatif",
+      "confirmed": "Confirmé"
+    },
+    "severity": {
+      "critical": "Critique",
+      "high": "Élevée",
+      "medium": "Moyenne",
+      "low": "Faible"
+    },
+    "target": {
+      "organization": "Toute l'organisation",
+      "vendor": "Fournisseur",
+      "data_flow": "Flux de données",
+      "data_asset": "Actif de données"
+    },
+    "conditions": {
+      "PRIVACY_OFFICER_NAMED": "Aucun responsable de la protection des renseignements personnels désigné",
+      "VENDOR_DUE_DILIGENCE": "Diligence raisonnable du fournisseur manquante",
+      "CROSS_BORDER_TRANSFER": "Transfert transfrontalier non évalué",
+      "BREACH_RESPONSE": "Réponse aux incidents non documentée",
+      "SAFEGUARDS": "Mesures de protection non documentées",
+      "DATA_INVENTORY": "Inventaire des données incomplet"
+    },
+    "why": {
+      "PRIVACY_OFFICER_NAMED": "Aucun responsable de la protection des renseignements personnels désigné et consigné n'a été trouvé. La Loi 25 exige une personne responsable de la protection des renseignements personnels.",
+      "VENDOR_DUE_DILIGENCE": "Ce fournisseur n'a aucune évaluation de diligence raisonnable documentée au dossier.",
+      "CROSS_BORDER_TRANSFER": "Ce flux comporte une exposition transfrontalière qui n'a pas fait l'objet d'une évaluation d'adéquation.",
+      "BREACH_RESPONSE": "Aucun processus documenté de réponse aux incidents n'a été trouvé.",
+      "SAFEGUARDS": "Les mesures de sécurité n'ont pas été documentées.",
+      "DATA_INVENTORY": "L'inventaire des renseignements personnels semble incomplet."
+    },
+    "obligationLabel": "Obligation",
+    "citationLabel": "Référence",
+    "whyLabel": "Pourquoi ce signalement",
+    "recommendedLabel": "Artefact recommandé",
+    "indicativeBadge": "Indicatif — non encore révisé",
+    "detailBack": "Retour au registre des risques",
+    "noRule": "Aucune référence réglementaire disponible.",
+    "reviewNote": "Ce constat est un signal, et non un verdict. Il ne devient officiel qu'une fois promu par un praticien accrédité (étape suivante).",
+    "addOfficerTitle": "Consigner un responsable de la protection des renseignements personnels",
+    "addOfficerHint": "Consigner une personne responsable résout le constat correspondant à la prochaine évaluation.",
+    "officerFields": {
+      "name": "Nom complet",
+      "title": "Titre",
+      "email": "Courriel"
+    },
+    "officerSave": "Consigner"
+  },
+  "artifacts": {
+    "privacy_officer_record": "Registre de responsabilité du responsable de la protection des renseignements personnels",
+    "vendor_due_diligence": "Dossier de diligence raisonnable du fournisseur",
+    "foreign_transfer_adequacy": "Évaluation de l'adéquation du transfert à l'étranger",
+    "breach_response_runbook": "Guide d'intervention en cas d'incident",
+    "data_inventory": "Inventaire des données",
+    "privacy_impact_assessment": "Évaluation des facteurs relatifs à la vie privée (EFVP)"
+  },
   "auth": {
     "title": "Connexion à MapleGuard",
     "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",

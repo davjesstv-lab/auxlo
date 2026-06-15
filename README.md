@@ -67,7 +67,7 @@ every row to one organization.
 | 1 | Foundation: scaffold, design tokens, bilingual setup, Supabase + Canadian region, auth, Organization/Engagement/User tables with RLS, workspace shell | ✅ Done |
 | 2 | Inventory & vendors: DataAsset/Vendor CRUD (hosting region + operator parent domicile + derived jurisdiction), ComplianceRule seed data | ✅ Done |
 | 3 | Exposure engine: DataFlow modeling, two-axis exposure + hardcoded CLOUD Act rule, quadrant grid with chips + legend | ✅ Done |
-| 4 | Findings & assessment: rule evaluation, risk register, finding detail | ⬜ |
+| 4 | Findings & assessment: rule evaluation (privacy officer, vendor due diligence, cross-border transfer), risk register, finding detail with citations | ✅ Done |
 | 5 | AI drafting: Claude API + six artifact generators (en/fr) | ⬜ |
 | 6 | Review, sign-off & hash-chained append-only audit log | ⬜ |
 | 7 | Export: PDF/DOCX for artifacts and the exposure map | ⬜ |

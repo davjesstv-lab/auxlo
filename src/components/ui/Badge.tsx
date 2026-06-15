@@ -38,6 +38,15 @@ export function jurisdictionTone(
   return "elevated";
 }
 
+/** Tone for a finding severity. */
+export function severityTone(
+  severity: "critical" | "high" | "medium" | "low",
+): Tone {
+  if (severity === "critical" || severity === "high") return "elevated";
+  if (severity === "medium") return "review";
+  return "neutral";
+}
+
 /** Tone for a sensitivity level. */
 export function sensitivityTone(
   sensitivity: "ordinary" | "sensitive" | "health",

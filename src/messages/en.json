@@ -160,6 +160,74 @@
       "retention": "Retention"
     }
   },
+  "findings": {
+    "title": "Risk register",
+    "subtitle": "Indicative findings from the assessment. Each is a signal until a credentialed practitioner confirms it.",
+    "runAssessment": "Run assessment",
+    "demoNotice": "Demo mode — findings are evaluated live and shown as indicative. Connect Supabase to persist and promote them.",
+    "empty": "No findings yet. Run an assessment to evaluate your program.",
+    "summary": {
+      "total": "Findings",
+      "indicative": "Indicative",
+      "confirmed": "Confirmed"
+    },
+    "status": {
+      "indicative": "Indicative",
+      "confirmed": "Confirmed"
+    },
+    "severity": {
+      "critical": "Critical",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "target": {
+      "organization": "Organization-wide",
+      "vendor": "Vendor",
+      "data_flow": "Data flow",
+      "data_asset": "Data asset"
+    },
+    "conditions": {
+      "PRIVACY_OFFICER_NAMED": "No privacy officer on record",
+      "VENDOR_DUE_DILIGENCE": "Vendor due diligence missing",
+      "CROSS_BORDER_TRANSFER": "Cross-border transfer not assessed",
+      "BREACH_RESPONSE": "Breach response not documented",
+      "SAFEGUARDS": "Safeguards not documented",
+      "DATA_INVENTORY": "Data inventory incomplete"
+    },
+    "why": {
+      "PRIVACY_OFFICER_NAMED": "No named, recorded privacy officer was found. Law 25 requires a designated person accountable for protecting personal information.",
+      "VENDOR_DUE_DILIGENCE": "This vendor has no documented due-diligence assessment on file.",
+      "CROSS_BORDER_TRANSFER": "This flow carries cross-border exposure that has not been assessed for adequacy.",
+      "BREACH_RESPONSE": "No documented breach-response process was found.",
+      "SAFEGUARDS": "Security safeguards have not been documented.",
+      "DATA_INVENTORY": "The personal-information inventory appears incomplete."
+    },
+    "obligationLabel": "Obligation",
+    "citationLabel": "Citation",
+    "whyLabel": "Why this was flagged",
+    "recommendedLabel": "Recommended artifact",
+    "indicativeBadge": "Indicative — not yet reviewed",
+    "detailBack": "Back to risk register",
+    "noRule": "No rule citation available.",
+    "reviewNote": "This finding is a signal, not a verdict. It becomes authoritative only when a credentialed practitioner promotes it (next phase).",
+    "addOfficerTitle": "Record a privacy officer",
+    "addOfficerHint": "Recording an accountability contact resolves the privacy officer finding on the next assessment.",
+    "officerFields": {
+      "name": "Full name",
+      "title": "Title",
+      "email": "Email"
+    },
+    "officerSave": "Record"
+  },
+  "artifacts": {
+    "privacy_officer_record": "Privacy officer accountability record",
+    "vendor_due_diligence": "Vendor due-diligence file",
+    "foreign_transfer_adequacy": "Foreign-transfer adequacy assessment",
+    "breach_response_runbook": "Breach response runbook",
+    "data_inventory": "Data inventory",
+    "privacy_impact_assessment": "Privacy impact assessment (EFVP)"
+  },
   "auth": {
     "title": "Sign in to MapleGuard",
     "subtitle": "Access your Canadian privacy program workspace.",

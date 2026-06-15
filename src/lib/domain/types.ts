@@ -71,3 +71,34 @@ export type ComplianceRule = {
   default_severity: RuleSeverity;
   recommended_artifact: string | null;
 };
+
+export type FindingStatus = "indicative" | "confirmed";
+
+export type FindingTarget =
+  | "organization"
+  | "vendor"
+  | "data_flow"
+  | "data_asset";
+
+export type PrivacyOfficer = {
+  id: string;
+  organization_id: string;
+  full_name: string;
+  title: string | null;
+  email: string | null;
+  created_at: string;
+};
+
+/** A finding shaped for display: the persisted/derived finding plus its
+ * citing rule, ready for the risk register and detail views. */
+export type FindingView = {
+  id: string;
+  condition: ComplianceCondition;
+  severity: RuleSeverity;
+  status: FindingStatus;
+  target_type: FindingTarget;
+  target_label: string | null;
+  recommended_artifact: string | null;
+  dedup_key: string;
+  rule: ComplianceRule | null;
+};
