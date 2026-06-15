@@ -7,6 +7,29 @@ the data-sovereignty question answerable and exportable, auto-drafts defensible
 artifacts, and proves diligence with credentialed human sign-off and a
 tamper-evident audit log.
 
+## Try it live (zero-config demo)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/davjesstv-lab/auxlo)
+
+The app runs in a **demo mode** when no environment variables are set, so you can
+deploy it with **no configuration** and click around immediately:
+
+1. Click **Deploy with Vercel** above (deploy from the branch that contains the
+   code — `claude/eloquent-sagan-5ixpyq`, or `main` once this PR is merged).
+2. Skip every environment variable when prompted — leave them blank.
+3. Open the deployed URL. It redirects to `/en` (or `/fr`).
+
+In demo mode you can explore the **workspace shell**, the **data residency map**
+with the cross-border exposure quadrant (including the Canada-hosted / US-parent
+CLOUD Act case), the **risk register** with live-evaluated indicative findings,
+the **vendor and inventory** views with sample data, the **evidence** artifact
+catalogue, and **PDF/DOCX export of the exposure map** — all in both languages.
+A banner marks demo mode throughout. Write actions, AI drafting, and sign-off
+require Supabase + Anthropic credentials (see below).
+
+> Want it running locally instead? Jump to [Getting started](#getting-started)
+> — `npm install && npm run dev` is the whole demo path.
+
 ## The hard boundary
 
 Two things are never automated, and the product is designed around that line:
