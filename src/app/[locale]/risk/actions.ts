@@ -1,8 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireOrg } from "@/lib/data/org";
+import { requireOrg, requirePractitioner } from "@/lib/data/org";
 import { evaluateFindings } from "@/lib/assessment/evaluate";
+import { appendAuditEntry } from "@/lib/data/audit";
+import { sha256Hex, canonicalize } from "@/lib/audit/hash";
 import { listVendors } from "@/lib/data/vendors";
 import { listDataFlows } from "@/lib/data/dataFlows";
 import { listPrivacyOfficers } from "@/lib/data/privacyOfficers";
@@ -89,4 +91,74 @@ export async function addPrivacyOfficer(formData: FormData) {
   if (error) throw error;
 
   revalidatePath(`/${locale}/risk`);
+}
+
+/**
+ * Promotes a finding from indicative to confirmed. Practitioner-only. Records
+ * an immutable SignOff (with a hash of the finding's content at sign-off) and
+ * appends a tamper-evident audit log entry.
+ */
+export async function confirmFinding(formData: FormData) {
+  const { supabase, orgId, userId } = await requirePractitioner();
+  const locale = str(formData.get("locale")) || "en";
+  const id = str(formData.get("id"));
+  const reviewerId = str(formData.get("reviewer_id"));
+  if (!id || !reviewerId) {
+    throw new Error("A finding and a reviewer are required.");
+  }
+
+  const { data: finding, error: findErr } = await supabase
+    .from("findings")
+    .select("condition, severity, target_type, target_id, rule_id, dedup_key")
+    .eq("id", id)
+    .single();
+  if (findErr || !finding) throw new Error("Finding not found.");
+
+  const priorHash = sha256Hex(
+    canonicalize({
+      condition: finding.condition,
+      severity: finding.severity,
+      target_type: finding.target_type,
+      target_id: finding.target_id,
+      rule_id: finding.rule_id,
+      dedup_key: finding.dedup_key,
+    }),
+  );
+
+  const { error: updErr } = await supabase
+    .from("findings")
+    .update({
+      status: "confirmed",
+      confirmed_at: new Date().toISOString(),
+      confirmed_by: userId,
+    })
+    .eq("id", id);
+  if (updErr) throw updErr;
+
+  const { error: soErr } = await supabase.from("sign_offs").insert({
+    organization_id: orgId,
+    reviewer_id: reviewerId,
+    actor_user_id: userId,
+    target_type: "finding",
+    target_id: id,
+    action: "confirm_finding",
+    prior_content_hash: priorHash,
+  });
+  if (soErr) throw soErr;
+
+  await appendAuditEntry(supabase, orgId, {
+    eventType: "finding_confirmed",
+    payload: {
+      target_type: "finding",
+      target_id: id,
+      condition: finding.condition,
+      prior_content_hash: priorHash,
+    },
+    reviewerId,
+    actorUserId: userId,
+  });
+
+  revalidatePath(`/${locale}/risk`);
+  revalidatePath(`/${locale}/risk/${id}`);
+  revalidatePath(`/${locale}/audit-prep`);
 }

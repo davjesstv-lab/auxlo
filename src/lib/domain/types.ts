@@ -8,6 +8,8 @@ export type ExposureLevel = "LOW" | "REVIEW" | "ELEVATED";
 
 export type Framework = "LAW25" | "PIPEDA" | "PHIPA";
 
+export type UserRole = "admin" | "practitioner" | "client";
+
 export type RuleSeverity = "low" | "medium" | "high" | "critical";
 
 export type ComplianceCondition =
@@ -70,6 +72,39 @@ export type ComplianceRule = {
   condition: ComplianceCondition;
   default_severity: RuleSeverity;
   recommended_artifact: string | null;
+};
+
+export type Reviewer = {
+  id: string;
+  organization_id: string;
+  full_name: string;
+  credential_type: string;
+  credential_id: string | null;
+  created_at: string;
+};
+
+export type AuditEventType =
+  | "finding_confirmed"
+  | "artifact_approved"
+  | "reviewer_added";
+
+export type AuditEntry = {
+  id: string;
+  organization_id: string;
+  seq: number;
+  event_type: AuditEventType;
+  payload: Record<string, unknown>;
+  reviewer_id: string | null;
+  actor_user_id: string | null;
+  prev_hash: string;
+  entry_hash: string;
+  created_at: string;
+};
+
+/** Audit entry joined with its reviewer, for the read-only timeline. */
+export type AuditEntryWithReviewer = AuditEntry & {
+  reviewer_name: string | null;
+  reviewer_credential: string | null;
 };
 
 export type ArtifactType =

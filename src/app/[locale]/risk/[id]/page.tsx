@@ -6,7 +6,11 @@ import { Badge, severityTone } from "@/components/ui/Badge";
 import { Link, redirect } from "@/i18n/navigation";
 import { supabaseEnv } from "@/lib/supabase/config";
 import { getUser } from "@/lib/supabase/server";
+import { getCurrentRole } from "@/lib/data/org";
 import { getFinding } from "@/lib/data/findings";
+import { listReviewers } from "@/lib/data/reviewers";
+import { PromotionForm } from "@/components/review/PromotionForm";
+import { confirmFinding } from "../actions";
 
 export default async function FindingDetailPage({
   params,
@@ -26,6 +30,17 @@ export default async function FindingDetailPage({
 
   const t = await getTranslations("findings");
   const tArtifacts = await getTranslations("artifacts");
+  const tPromote = await getTranslations("promote");
+
+  // Promotion is available only for persisted findings (configured mode), to
+  // practitioners, while the finding is still indicative.
+  const role = configured ? await getCurrentRole() : null;
+  const canPromote =
+    configured &&
+    (role === "practitioner" || role === "admin") &&
+    finding.status === "indicative";
+  const reviewers = canPromote ? await listReviewers() : [];
+
   const obligation =
     finding.rule &&
     (locale === "fr"
@@ -96,9 +111,24 @@ export default async function FindingDetailPage({
               </Section>
             </Card>
           )}
-          <Card className="bg-review-bg/30">
-            <p className="text-sm text-ink-secondary">{t("reviewNote")}</p>
-          </Card>
+          {finding.status === "confirmed" ? (
+            <Card className="bg-low-bg/40">
+              <p className="text-sm text-low">{tPromote("confirmedNote")}</p>
+            </Card>
+          ) : canPromote ? (
+            <Card>
+              <PromotionForm
+                action={confirmFinding}
+                targetId={finding.id}
+                reviewers={reviewers}
+                submitLabel={tPromote("confirmFinding")}
+              />
+            </Card>
+          ) : (
+            <Card className="bg-review-bg/30">
+              <p className="text-sm text-ink-secondary">{t("reviewNote")}</p>
+            </Card>
+          )}
         </div>
       </div>
     </WorkspaceShell>

@@ -2,7 +2,9 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { requireOrg } from "@/lib/data/org";
+import { requireOrg, requirePractitioner } from "@/lib/data/org";
+import { appendAuditEntry } from "@/lib/data/audit";
+import { sha256Hex } from "@/lib/audit/hash";
 import { anthropicEnv } from "@/lib/ai/anthropic";
 import { generateArtifact } from "@/lib/ai/artifacts";
 import { listVendors } from "@/lib/data/vendors";
@@ -107,4 +109,61 @@ export async function generateArtifactAction(formData: FormData) {
 
   revalidatePath(`/${locale}/evidence`);
   redirect(`/${locale}/evidence/${inserted.id}`);
+}
+
+/**
+ * Approves an artifact draft. Practitioner-only. Records an immutable SignOff
+ * (with a hash of the artifact content at approval) and appends a tamper-
+ * evident audit log entry.
+ */
+export async function approveArtifact(formData: FormData) {
+  const { supabase, orgId, userId } = await requirePractitioner();
+  const locale = str(formData.get("locale")) || "en";
+  const id = str(formData.get("id"));
+  const reviewerId = str(formData.get("reviewer_id"));
+  if (!id || !reviewerId) {
+    throw new Error("An artifact and a reviewer are required.");
+  }
+
+  const { data: artifact, error: artErr } = await supabase
+    .from("artifacts")
+    .select("content, type")
+    .eq("id", id)
+    .single();
+  if (artErr || !artifact) throw new Error("Artifact not found.");
+
+  const priorHash = sha256Hex(artifact.content);
+
+  const { error: updErr } = await supabase
+    .from("artifacts")
+    .update({ review_status: "approved" })
+    .eq("id", id);
+  if (updErr) throw updErr;
+
+  const { error: soErr } = await supabase.from("sign_offs").insert({
+    organization_id: orgId,
+    reviewer_id: reviewerId,
+    actor_user_id: userId,
+    target_type: "artifact",
+    target_id: id,
+    action: "approve_artifact",
+    prior_content_hash: priorHash,
+  });
+  if (soErr) throw soErr;
+
+  await appendAuditEntry(supabase, orgId, {
+    eventType: "artifact_approved",
+    payload: {
+      target_type: "artifact",
+      target_id: id,
+      artifact_type: artifact.type,
+      prior_content_hash: priorHash,
+    },
+    reviewerId,
+    actorUserId: userId,
+  });
+
+  revalidatePath(`/${locale}/evidence`);
+  revalidatePath(`/${locale}/evidence/${id}`);
+  revalidatePath(`/${locale}/audit-prep`);
 }

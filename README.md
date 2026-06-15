@@ -69,7 +69,7 @@ every row to one organization.
 | 3 | Exposure engine: DataFlow modeling, two-axis exposure + hardcoded CLOUD Act rule, quadrant grid with chips + legend | ✅ Done |
 | 4 | Findings & assessment: rule evaluation (privacy officer, vendor due diligence, cross-border transfer), risk register, finding detail with citations | ✅ Done |
 | 5 | AI drafting: Claude API + six artifact generators, versioned bilingual drafts landing in "needs review" | ✅ Done |
-| 6 | Review, sign-off & hash-chained append-only audit log | ⬜ |
+| 6 | Review, sign-off & hash-chained append-only audit log with chain verification | ✅ Done |
 | 7 | Export: PDF/DOCX for artifacts and the exposure map | ⬜ |
 
 ## Non-negotiables

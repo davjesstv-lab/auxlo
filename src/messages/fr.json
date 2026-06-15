@@ -254,6 +254,39 @@
       "privacy_officer_record": "Un registre de responsabilité pour le responsable désigné (art. 3.1 à 3.3 de la Loi 25)."
     }
   },
+  "audit": {
+    "title": "Préparation à l'audit",
+    "subtitle": "Réviseurs accrédités, approbations immuables et journal infalsifiable.",
+    "reviewersTitle": "Réviseurs",
+    "reviewersSubtitle": "Praticiens accrédités pouvant promouvoir des constats et approuver des artefacts.",
+    "noReviewers": "Aucun réviseur enregistré pour l'instant.",
+    "addReviewer": "Ajouter un réviseur",
+    "reviewerFields": {
+      "name": "Nom complet",
+      "credentialType": "Accréditation (p. ex. CISA, CRISC)",
+      "credentialId": "Numéro d'accréditation"
+    },
+    "logTitle": "Journal d'audit",
+    "logSubtitle": "En ajout seulement et chaîné par hachage. En lecture seule.",
+    "chainValid": "Journal d'audit vérifié — {count} entrées, chaîne intègre.",
+    "chainInvalid": "Échec de la vérification d'intégrité à l'entrée n° {seq}.",
+    "chainEmpty": "Aucune entrée d'audit pour l'instant. Les promotions et approbations apparaîtront ici.",
+    "events": {
+      "finding_confirmed": "Constat confirmé",
+      "artifact_approved": "Artefact approuvé",
+      "reviewer_added": "Réviseur ajouté"
+    },
+    "by": "par",
+    "demoNotice": "Mode démo — connectez Supabase pour gérer les réviseurs et consigner les approbations."
+  },
+  "promote": {
+    "reviewer": "Réviseur",
+    "confirmFinding": "Confirmer le constat",
+    "approveArtifact": "Approuver",
+    "needsReviewer": "Ajoutez un réviseur accrédité dans Préparation à l'audit avant de promouvoir.",
+    "confirmedNote": "Confirmé par un praticien accrédité. Consigné dans le journal d'audit en ajout seulement.",
+    "approvedNote": "Approuvé par un praticien accrédité. Consigné dans le journal d'audit en ajout seulement."
+  },
   "auth": {
     "title": "Connexion à MapleGuard",
     "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",

@@ -254,6 +254,39 @@
       "privacy_officer_record": "An accountability record for the designated privacy officer (Law 25 art. 3.1–3.3)."
     }
   },
+  "audit": {
+    "title": "Audit prep",
+    "subtitle": "Credentialed reviewers, immutable sign-offs, and the tamper-evident log.",
+    "reviewersTitle": "Reviewers",
+    "reviewersSubtitle": "Credentialed practitioners who can promote findings and approve artifacts.",
+    "noReviewers": "No reviewers recorded yet.",
+    "addReviewer": "Add reviewer",
+    "reviewerFields": {
+      "name": "Full name",
+      "credentialType": "Credential (e.g. CISA, CRISC)",
+      "credentialId": "Credential ID"
+    },
+    "logTitle": "Audit log",
+    "logSubtitle": "Append-only and hash-chained. Read-only.",
+    "chainValid": "Audit log verified — {count} entries, chain intact.",
+    "chainInvalid": "Chain integrity check FAILED at entry #{seq}.",
+    "chainEmpty": "No audit entries yet. Promotions and approvals will appear here.",
+    "events": {
+      "finding_confirmed": "Finding confirmed",
+      "artifact_approved": "Artifact approved",
+      "reviewer_added": "Reviewer added"
+    },
+    "by": "by",
+    "demoNotice": "Demo mode — connect Supabase to manage reviewers and record sign-offs."
+  },
+  "promote": {
+    "reviewer": "Reviewer",
+    "confirmFinding": "Confirm finding",
+    "approveArtifact": "Approve",
+    "needsReviewer": "Add a credentialed reviewer in Audit prep before promoting.",
+    "confirmedNote": "Confirmed by a credentialed practitioner. Recorded in the append-only audit log.",
+    "approvedNote": "Approved by a credentialed practitioner. Recorded in the append-only audit log."
+  },
   "auth": {
     "title": "Sign in to MapleGuard",
     "subtitle": "Access your Canadian privacy program workspace.",
