@@ -228,6 +228,32 @@
     "data_inventory": "Inventaire des données",
     "privacy_impact_assessment": "Évaluation des facteurs relatifs à la vie privée (EFVP)"
   },
+  "evidence": {
+    "title": "Preuves",
+    "subtitle": "Artefacts défendables rédigés par l'IA à partir des données de votre mandat. Chaque brouillon doit être révisé par un praticien accrédité avant d'être officiel.",
+    "generate": "Générer",
+    "generating": "Rédaction…",
+    "versionsLabel": "Brouillons",
+    "noVersions": "Aucun brouillon pour l'instant.",
+    "versionTag": "v{n}",
+    "view": "Voir",
+    "draftTag": "Brouillon",
+    "approvedTag": "Approuvé",
+    "demoNotice": "Mode démo — connectez Supabase et l'API Anthropic pour générer des brouillons d'artefacts.",
+    "aiNoticeShort": "Généré par Claude à partir de vos données; révision requise.",
+    "aiNotice": "Ce brouillon a été généré par Claude à partir des données de votre mandat. Il n'est pas officiel et doit être révisé par un praticien accrédité. Il s'agit de documentation et de recommandations seulement — et non d'un avis juridique.",
+    "back": "Retour aux preuves",
+    "languageEn": "EN",
+    "languageFr": "FR",
+    "descriptions": {
+      "privacy_impact_assessment": "Évaluation des facteurs relatifs à la vie privée (EFVP) couvrant le traitement, les risques et les mesures d'atténuation.",
+      "data_inventory": "Un registre des renseignements personnels que détient votre organisation.",
+      "vendor_due_diligence": "Un dossier de diligence raisonnable pour vos fournisseurs et exploitants.",
+      "foreign_transfer_adequacy": "Une évaluation de l'adéquation du transfert pour chaque flux transfrontalier signalé (art. 17 de la Loi 25).",
+      "breach_response_runbook": "Un guide d'intervention en cas d'incident conforme à l'art. 3.5 de la Loi 25.",
+      "privacy_officer_record": "Un registre de responsabilité pour le responsable désigné (art. 3.1 à 3.3 de la Loi 25)."
+    }
+  },
   "auth": {
     "title": "Connexion à MapleGuard",
     "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",

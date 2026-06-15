@@ -72,6 +72,28 @@ export type ComplianceRule = {
   recommended_artifact: string | null;
 };
 
+export type ArtifactType =
+  | "privacy_impact_assessment"
+  | "data_inventory"
+  | "vendor_due_diligence"
+  | "foreign_transfer_adequacy"
+  | "breach_response_runbook"
+  | "privacy_officer_record";
+
+export type ArtifactReviewStatus = "draft" | "approved";
+
+export type Artifact = {
+  id: string;
+  organization_id: string;
+  type: ArtifactType;
+  language: "en" | "fr";
+  title: string;
+  content: string;
+  review_status: ArtifactReviewStatus;
+  version: number;
+  created_at: string;
+};
+
 export type FindingStatus = "indicative" | "confirmed";
 
 export type FindingTarget =

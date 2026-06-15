@@ -56,3 +56,47 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
+
+/* Rendered artifact drafts (clean HTML fragments from the AI generator). */
+.artifact-prose {
+  color: var(--color-ink-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.artifact-prose h1,
+.artifact-prose h2,
+.artifact-prose h3 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  font-weight: 600;
+  margin: 1.4em 0 0.5em;
+  line-height: 1.25;
+}
+.artifact-prose h1 { font-size: 1.6rem; margin-top: 0; }
+.artifact-prose h2 { font-size: 1.25rem; }
+.artifact-prose h3 { font-size: 1.05rem; }
+.artifact-prose p { margin: 0.75em 0; }
+.artifact-prose ul,
+.artifact-prose ol { margin: 0.75em 0; padding-left: 1.4em; }
+.artifact-prose ul { list-style: disc; }
+.artifact-prose ol { list-style: decimal; }
+.artifact-prose li { margin: 0.25em 0; }
+.artifact-prose strong { color: var(--color-ink); font-weight: 600; }
+.artifact-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.875rem;
+}
+.artifact-prose th,
+.artifact-prose td {
+  border: 1px solid var(--color-hairline);
+  padding: 0.5em 0.75em;
+  text-align: left;
+  vertical-align: top;
+}
+.artifact-prose th {
+  background-color: var(--color-tile-lavender);
+  color: var(--color-ink);
+  font-weight: 600;
+}
