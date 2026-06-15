@@ -84,6 +84,44 @@
       "PHIPA": "LPRPS"
     }
   },
+  "exposure": {
+    "levels": {
+      "LOW": "Faible",
+      "REVIEW": "À évaluer",
+      "ELEVATED": "Élevée"
+    },
+    "axisResidency": "Résidence des données",
+    "axisJurisdiction": "Compétence de l'exploitant",
+    "legend": "Exposition",
+    "reasons": {
+      "canadian_controlled": "Données au Canada avec un exploitant sous contrôle canadien.",
+      "cloud_act_mismatch": "Hébergées au Canada mais exploitées par une entité dont la société mère est américaine — assujetties au CLOUD Act. Une évaluation du transfert est requise.",
+      "foreign_operator_mismatch": "Hébergées au Canada mais exploitées par une entité sous contrôle étranger. Évaluation requise.",
+      "data_abroad_canadian_operator": "Les données sont hébergées à l'extérieur du Canada. Le transfert doit être évalué.",
+      "foreign_residency_and_operator": "Données hébergées à l'extérieur du Canada avec un exploitant étranger."
+    }
+  },
+  "residency": {
+    "title": "Carte de résidence des données",
+    "subtitle": "Résidence physique des données par rapport à la compétence de l'exploitant — la question du CLOUD Act, rendue claire.",
+    "quadrantTitle": "Carte d'exposition",
+    "flowsTitle": "Flux de données",
+    "flowsSubtitle": "Chaque lien entre une catégorie de données et un fournisseur, avec son exposition calculée.",
+    "crossBorderTitle": "Exposition transfrontalière",
+    "crossBorderSubtitle": "Flux nécessitant une évaluation du transfert en vertu de l'art. 17 de la Loi 25.",
+    "noFlows": "Aucun flux de données enregistré pour l'instant.",
+    "noVendors": "Ajoutez d'abord des fournisseurs et des actifs de données pour modéliser les flux.",
+    "addFlow": "Ajouter un flux",
+    "demoNotice": "Mode démo — connectez Supabase pour ajouter ou supprimer des flux de données.",
+    "flowsTo": "vers",
+    "fields": {
+      "asset": "Actif de données",
+      "vendor": "Fournisseur",
+      "purpose": "Fin"
+    },
+    "deleteConfirm": "Supprimer ce flux de données?",
+    "exportHint": "Cette carte constitue le livrable documenté remis au client; l'exportation PDF arrivera à une étape ultérieure."
+  },
   "vendors": {
     "title": "Fournisseurs",
     "subtitle": "Prestataires de services et exploitants, avec la région d'hébergement et la compétence de l'exploitant.",

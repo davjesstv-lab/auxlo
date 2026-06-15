@@ -4,6 +4,8 @@ export type OperatorJurisdiction = "CANADIAN" | "US_PARENT" | "FOREIGN";
 
 export type SensitivityLevel = "ordinary" | "sensitive" | "health";
 
+export type ExposureLevel = "LOW" | "REVIEW" | "ELEVATED";
+
 export type Framework = "LAW25" | "PIPEDA" | "PHIPA";
 
 export type RuleSeverity = "low" | "medium" | "high" | "critical";
@@ -39,6 +41,24 @@ export type Vendor = {
   due_diligence_completed: boolean;
   notes: string | null;
   created_at: string;
+};
+
+export type DataFlow = {
+  id: string;
+  organization_id: string;
+  data_asset_id: string;
+  vendor_id: string;
+  purpose: string | null;
+  exposure_level: ExposureLevel;
+  created_at: string;
+};
+
+/** A data flow joined with the names it links, for display. */
+export type DataFlowWithRelations = DataFlow & {
+  data_asset_name: string;
+  vendor_name: string;
+  physical_hosting_region: DataResidency;
+  operator_jurisdiction: OperatorJurisdiction;
 };
 
 export type ComplianceRule = {

@@ -45,6 +45,34 @@ export const DEMO_VENDORS: Vendor[] = [
   },
 ];
 
+/** Demo data-flow links (asset id -> vendor id), used to populate the
+ * exposure map in demo mode. Exposure levels are computed by the engine. */
+export const DEMO_FLOW_LINKS: {
+  id: string;
+  data_asset_id: string;
+  vendor_id: string;
+  purpose: string | null;
+}[] = [
+  {
+    id: "demo-flow-1",
+    data_asset_id: "demo-asset-1",
+    vendor_id: "demo-vendor-2",
+    purpose: "CRM hosting",
+  },
+  {
+    id: "demo-flow-2",
+    data_asset_id: "demo-asset-2",
+    vendor_id: "demo-vendor-1",
+    purpose: "Primary hosting",
+  },
+  {
+    id: "demo-flow-3",
+    data_asset_id: "demo-asset-2",
+    vendor_id: "demo-vendor-3",
+    purpose: "Product analytics",
+  },
+];
+
 export const DEMO_DATA_ASSETS: DataAsset[] = [
   {
     id: "demo-asset-1",

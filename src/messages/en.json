@@ -84,6 +84,44 @@
       "PHIPA": "PHIPA"
     }
   },
+  "exposure": {
+    "levels": {
+      "LOW": "Low",
+      "REVIEW": "Review",
+      "ELEVATED": "Elevated"
+    },
+    "axisResidency": "Data residency",
+    "axisJurisdiction": "Operator jurisdiction",
+    "legend": "Exposure",
+    "reasons": {
+      "canadian_controlled": "Data in Canada with a Canadian-controlled operator.",
+      "cloud_act_mismatch": "Hosted in Canada but operated by a US-parent entity — reachable under the US CLOUD Act. A transfer assessment is required.",
+      "foreign_operator_mismatch": "Hosted in Canada but operated by a foreign-controlled entity. Assessment required.",
+      "data_abroad_canadian_operator": "Data is hosted outside Canada. The transfer must be assessed.",
+      "foreign_residency_and_operator": "Data hosted outside Canada with a foreign operator."
+    }
+  },
+  "residency": {
+    "title": "Data residency map",
+    "subtitle": "Physical data residency versus operator jurisdiction — the CLOUD Act question, made answerable.",
+    "quadrantTitle": "Exposure map",
+    "flowsTitle": "Data flows",
+    "flowsSubtitle": "Each link from a data category to a vendor, with its computed exposure.",
+    "crossBorderTitle": "Cross-border exposure",
+    "crossBorderSubtitle": "Flows requiring a transfer assessment under Law 25 art. 17.",
+    "noFlows": "No data flows recorded yet.",
+    "noVendors": "Add vendors and data assets first to model data flows.",
+    "addFlow": "Add flow",
+    "demoNotice": "Demo mode — connect Supabase to add or remove data flows.",
+    "flowsTo": "flows to",
+    "fields": {
+      "asset": "Data asset",
+      "vendor": "Vendor",
+      "purpose": "Purpose"
+    },
+    "deleteConfirm": "Remove this data flow?",
+    "exportHint": "This map is the documented deliverable to the client; PDF export arrives in a later phase."
+  },
   "vendors": {
     "title": "Vendors",
     "subtitle": "Service providers and operators, with hosting region and operator jurisdiction.",
