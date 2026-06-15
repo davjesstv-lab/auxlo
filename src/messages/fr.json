@@ -287,6 +287,11 @@
     "confirmedNote": "Confirmé par un praticien accrédité. Consigné dans le journal d'audit en ajout seulement.",
     "approvedNote": "Approuvé par un praticien accrédité. Consigné dans le journal d'audit en ajout seulement."
   },
+  "export": {
+    "label": "Exporter",
+    "pdf": "PDF",
+    "docx": "DOCX"
+  },
   "auth": {
     "title": "Connexion à MapleGuard",
     "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",

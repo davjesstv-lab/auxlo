@@ -287,6 +287,11 @@
     "confirmedNote": "Confirmed by a credentialed practitioner. Recorded in the append-only audit log.",
     "approvedNote": "Approved by a credentialed practitioner. Recorded in the append-only audit log."
   },
+  "export": {
+    "label": "Export",
+    "pdf": "PDF",
+    "docx": "DOCX"
+  },
   "auth": {
     "title": "Sign in to MapleGuard",
     "subtitle": "Access your Canadian privacy program workspace.",

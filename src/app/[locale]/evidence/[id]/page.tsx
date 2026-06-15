@@ -10,6 +10,7 @@ import { getCurrentRole } from "@/lib/data/org";
 import { getArtifact } from "@/lib/data/artifacts";
 import { listReviewers } from "@/lib/data/reviewers";
 import { PromotionForm } from "@/components/review/PromotionForm";
+import { ExportLinks } from "@/components/export/ExportLinks";
 import { approveArtifact } from "../actions";
 
 export default async function ArtifactPage({
@@ -57,9 +58,12 @@ export default async function ArtifactPage({
         </span>
       </div>
 
-      <h1 className="font-display text-2xl font-bold text-ink">
-        {tArtifacts(artifact.type)}
-      </h1>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h1 className="font-display text-2xl font-bold text-ink">
+          {tArtifacts(artifact.type)}
+        </h1>
+        <ExportLinks basePath={`/${locale}/evidence/${artifact.id}/export`} />
+      </div>
 
       <p className="mt-2 rounded-tile bg-review-bg px-4 py-3 text-sm text-review">
         {t("aiNotice")}

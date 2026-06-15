@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/Badge";
 import { DeleteButton } from "@/components/ui/DeleteButton";
 import { QuadrantGrid } from "@/components/exposure/QuadrantGrid";
 import { DataFlowForm } from "@/components/exposure/DataFlowForm";
+import { ExportLinks } from "@/components/export/ExportLinks";
 import { redirect } from "@/i18n/navigation";
 import { supabaseEnv } from "@/lib/supabase/config";
 import { getUser } from "@/lib/supabase/server";
@@ -84,9 +85,12 @@ export default async function ResidencyPage({
       )}
 
       <Card className="mb-6">
-        <h2 className="mb-4 font-display text-lg font-semibold text-ink">
-          {t("quadrantTitle")}
-        </h2>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="font-display text-lg font-semibold text-ink">
+            {t("quadrantTitle")}
+          </h2>
+          <ExportLinks basePath={`/${locale}/residency/export`} />
+        </div>
         <QuadrantGrid vendors={vendors} />
         <p className="mt-4 text-xs text-muted">{t("exportHint")}</p>
       </Card>
