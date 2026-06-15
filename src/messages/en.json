@@ -1,0 +1,74 @@
+{
+  "app": {
+    "name": "MapleGuard",
+    "tagline": "Canadian-first privacy program engine"
+  },
+  "nav": {
+    "sectionLabel": "Workspace",
+    "overview": "Overview",
+    "residency": "Data residency map",
+    "risk": "Risk register",
+    "vendors": "Vendors",
+    "evidence": "Evidence",
+    "auditPrep": "Audit prep"
+  },
+  "topbar": {
+    "engagementStatus": "Engagement status",
+    "status": {
+      "active": "Active",
+      "draft": "Draft",
+      "review": "In review"
+    },
+    "language": "Language",
+    "demoMode": "Demo mode — Supabase not configured"
+  },
+  "overview": {
+    "title": "Overview",
+    "subtitle": "Your Law 25, PIPEDA and PHIPA program at a glance.",
+    "tiles": {
+      "frameworks": {
+        "label": "Frameworks in scope",
+        "value": "Law 25 · PIPEDA · PHIPA"
+      },
+      "residency": {
+        "label": "Data residency",
+        "value": "Canada"
+      },
+      "findings": {
+        "label": "Open findings",
+        "value": "—",
+        "hint": "Available in the assessment phase"
+      },
+      "signoff": {
+        "label": "Review status",
+        "value": "Awaiting credentialed sign-off"
+      }
+    },
+    "exposureTitle": "Cross-border exposure",
+    "exposurePlaceholder": "The two-axis exposure map arrives in a later phase. It plots physical data residency against operator jurisdiction so the CLOUD Act question becomes answerable.",
+    "findingsTitle": "Findings",
+    "findingsPlaceholder": "Indicative findings will appear here once the assessment engine is built. Every finding stays a signal until a credentialed practitioner confirms it."
+  },
+  "placeholder": {
+    "comingSoon": "Coming in a later phase",
+    "description": "This part of the workspace is scaffolded and will be built in an upcoming phase of the MapleGuard program engine."
+  },
+  "auth": {
+    "title": "Sign in to MapleGuard",
+    "subtitle": "Access your Canadian privacy program workspace.",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "signingIn": "Signing in…",
+    "notConfigured": "Authentication is not configured yet. Set your Supabase environment variables to enable sign-in.",
+    "error": "Unable to sign in. Check your credentials and try again."
+  },
+  "footer": {
+    "note": "Canadian-operated practice. Data residency scoped to engagement.",
+    "region": "Region: {region}"
+  },
+  "common": {
+    "draftBadge": "Draft — pending credentialed review",
+    "notLegalAdvice": "Documentation and recommendations only. Not legal advice."
+  }
+}

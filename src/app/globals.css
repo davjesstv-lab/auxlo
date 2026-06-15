@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/*
+ * MapleGuard design system.
+ * Tokens are exposed as Tailwind v4 theme variables, which generate the
+ * matching utilities (e.g. --color-ink -> bg-ink / text-ink, --radius-card
+ * -> rounded-card, --font-display -> font-display).
+ */
+@theme {
+  /* Typography. Fonts are loaded via next/font in the locale layout. */
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
+
+  /* Ink + neutrals */
+  --color-ink: #131c25;
+  --color-ink-secondary: #3a4453;
+  --color-muted: #8b95a6;
+  --color-hairline: #ecedf2;
+
+  /* Brand indigo */
+  --color-indigo: #6e6feb;
+  --color-indigo-dark: #5b5dd2;
+
+  /* Risk + status palette: Low / Review / Elevated */
+  --color-low: #1f9676;
+  --color-low-bg: #e6f4ef;
+  --color-review: #c4862e;
+  --color-review-bg: #faf1e0;
+  --color-elevated: #ce5637;
+  --color-elevated-bg: #fae8e2;
+
+  /* Tile pastels */
+  --color-tile-blue: #e7eff9;
+  --color-tile-peach: #fff2e9;
+  --color-tile-lavender: #e9eafd;
+
+  /* Rounded corners: cards ~24px, tiles ~14px */
+  --radius-card: 24px;
+  --radius-tile: 14px;
+
+  /* Soft elevation */
+  --shadow-soft: 0 1px 2px rgba(19, 28, 37, 0.04),
+    0 12px 32px rgba(19, 28, 37, 0.06);
+  --shadow-tile: 0 1px 2px rgba(19, 28, 37, 0.04),
+    0 6px 18px rgba(19, 28, 37, 0.05);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}

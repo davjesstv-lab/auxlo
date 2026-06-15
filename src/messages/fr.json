@@ -1,0 +1,74 @@
+{
+  "app": {
+    "name": "MapleGuard",
+    "tagline": "Moteur de programme de confidentialité, pensé pour le Canada"
+  },
+  "nav": {
+    "sectionLabel": "Espace de travail",
+    "overview": "Vue d'ensemble",
+    "residency": "Carte de résidence des données",
+    "risk": "Registre des risques",
+    "vendors": "Fournisseurs",
+    "evidence": "Preuves",
+    "auditPrep": "Préparation à l'audit"
+  },
+  "topbar": {
+    "engagementStatus": "Statut du mandat",
+    "status": {
+      "active": "Actif",
+      "draft": "Brouillon",
+      "review": "En révision"
+    },
+    "language": "Langue",
+    "demoMode": "Mode démo — Supabase non configuré"
+  },
+  "overview": {
+    "title": "Vue d'ensemble",
+    "subtitle": "Votre programme Loi 25, LPRPDE et LPRPS en un coup d'œil.",
+    "tiles": {
+      "frameworks": {
+        "label": "Cadres visés",
+        "value": "Loi 25 · LPRPDE · LPRPS"
+      },
+      "residency": {
+        "label": "Résidence des données",
+        "value": "Canada"
+      },
+      "findings": {
+        "label": "Constats ouverts",
+        "value": "—",
+        "hint": "Disponible à l'étape d'évaluation"
+      },
+      "signoff": {
+        "label": "Statut de révision",
+        "value": "En attente d'une approbation accréditée"
+      }
+    },
+    "exposureTitle": "Exposition transfrontalière",
+    "exposurePlaceholder": "La carte d'exposition à deux axes arrivera à une étape ultérieure. Elle place la résidence physique des données face à la compétence de l'exploitant, afin de répondre concrètement à la question du CLOUD Act.",
+    "findingsTitle": "Constats",
+    "findingsPlaceholder": "Les constats indicatifs apparaîtront ici une fois le moteur d'évaluation construit. Chaque constat demeure un signal tant qu'un praticien accrédité ne l'a pas confirmé."
+  },
+  "placeholder": {
+    "comingSoon": "À venir à une étape ultérieure",
+    "description": "Cette partie de l'espace de travail est ébauchée et sera développée à une prochaine étape du moteur de programme MapleGuard."
+  },
+  "auth": {
+    "title": "Connexion à MapleGuard",
+    "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",
+    "email": "Courriel",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "signingIn": "Connexion en cours…",
+    "notConfigured": "L'authentification n'est pas encore configurée. Définissez vos variables d'environnement Supabase pour activer la connexion.",
+    "error": "Connexion impossible. Vérifiez vos identifiants et réessayez."
+  },
+  "footer": {
+    "note": "Pratique exploitée au Canada. Résidence des données restreinte au mandat.",
+    "region": "Région : {region}"
+  },
+  "common": {
+    "draftBadge": "Brouillon — en attente d'une révision accréditée",
+    "notLegalAdvice": "Documentation et recommandations seulement. Ne constitue pas un avis juridique."
+  }
+}
