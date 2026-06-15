@@ -76,6 +76,9 @@ The app runs in a **demo mode** when Supabase env vars are absent, so the shell
 and design system remain previewable without credentials. With Supabase
 configured, the workspace requires authentication and redirects to `/login`.
 
+For a hosted demo or a real client instance (Canadian Supabase + Anthropic +
+onboarding), see **[DEPLOY.md](./DEPLOY.md)**.
+
 ### Database
 
 Apply the SQL migrations in `supabase/migrations/` to your Canadian Supabase
