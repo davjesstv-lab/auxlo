@@ -1,0 +1,353 @@
+{
+  "app": {
+    "name": "MapleGuard",
+    "tagline": "Moteur de programme de confidentialité, pensé pour le Canada"
+  },
+  "nav": {
+    "sectionLabel": "Espace de travail",
+    "overview": "Vue d'ensemble",
+    "residency": "Carte de résidence des données",
+    "risk": "Registre des risques",
+    "vendors": "Fournisseurs",
+    "inventory": "Inventaire des données",
+    "evidence": "Preuves",
+    "auditPrep": "Préparation à l'audit",
+    "admin": "Utilisateurs et rôles",
+    "settings": "Organisation"
+  },
+  "settings": {
+    "title": "Organisation",
+    "subtitle": "Le profil de votre organisation. La langue préférée définit la valeur par défaut pour les nouveaux utilisateurs.",
+    "demoNotice": "Mode démo — connectez Supabase pour gérer votre organisation.",
+    "fields": {
+      "name": "Nom",
+      "sector": "Secteur",
+      "headcount": "Effectif",
+      "jurisdiction": "Compétence principale",
+      "language": "Langue préférée"
+    },
+    "languageEn": "English",
+    "languageFr": "Français",
+    "save": "Enregistrer les modifications"
+  },
+  "admin": {
+    "title": "Utilisateurs et rôles",
+    "subtitle": "Gérez qui peut accéder à cette organisation et ce qu'ils peuvent faire.",
+    "notConfigured": "La gestion des utilisateurs nécessite la clé de rôle de service Supabase (SUPABASE_SERVICE_ROLE_KEY). En attendant, intégrez via supabase/seed/onboard.sql.",
+    "demoNotice": "Mode démo — connectez Supabase pour gérer les utilisateurs.",
+    "colUser": "Utilisateur",
+    "colRole": "Rôle",
+    "noUsers": "Aucun utilisateur dans cette organisation pour l'instant.",
+    "save": "Enregistrer",
+    "remove": "Retirer",
+    "removeConfirm": "Retirer cet utilisateur de l'organisation?",
+    "inviteTitle": "Inviter un utilisateur",
+    "inviteHint": "Envoie un courriel d'invitation (si l'utilisateur est nouveau) et le rattache à cette organisation.",
+    "inviteEmail": "Courriel",
+    "invite": "Inviter",
+    "roles": {
+      "admin": "Administrateur",
+      "practitioner": "Praticien",
+      "client": "Client"
+    }
+  },
+  "topbar": {
+    "engagementStatus": "Statut du mandat",
+    "status": {
+      "active": "Actif",
+      "draft": "Brouillon",
+      "review": "En révision"
+    },
+    "language": "Langue",
+    "demoMode": "Mode démo — Supabase non configuré"
+  },
+  "overview": {
+    "title": "Vue d'ensemble",
+    "subtitle": "Votre programme Loi 25, LPRPDE et LPRPS en un coup d'œil.",
+    "tiles": {
+      "frameworks": {
+        "label": "Cadres visés",
+        "value": "Loi 25 · LPRPDE · LPRPS"
+      },
+      "residency": {
+        "label": "Résidence des données",
+        "value": "Canada"
+      },
+      "findings": {
+        "label": "Constats ouverts",
+        "value": "—",
+        "hint": "Disponible à l'étape d'évaluation"
+      },
+      "signoff": {
+        "label": "Statut de révision",
+        "value": "En attente d'une approbation accréditée"
+      }
+    },
+    "exposureTitle": "Exposition transfrontalière",
+    "exposurePlaceholder": "La carte d'exposition à deux axes arrivera à une étape ultérieure. Elle place la résidence physique des données face à la compétence de l'exploitant, afin de répondre concrètement à la question du CLOUD Act.",
+    "findingsTitle": "Constats",
+    "findingsPlaceholder": "Les constats indicatifs apparaîtront ici une fois le moteur d'évaluation construit. Chaque constat demeure un signal tant qu'un praticien accrédité ne l'a pas confirmé."
+  },
+  "placeholder": {
+    "comingSoon": "À venir à une étape ultérieure",
+    "description": "Cette partie de l'espace de travail est ébauchée et sera développée à une prochaine étape du moteur de programme MapleGuard."
+  },
+  "actions": {
+    "add": "Ajouter",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "back": "Retour"
+  },
+  "enums": {
+    "residency": {
+      "CANADA": "Canada",
+      "UNITED_STATES": "États-Unis",
+      "OTHER": "Autre"
+    },
+    "jurisdiction": {
+      "CANADIAN": "Sous contrôle canadien",
+      "US_PARENT": "Société mère américaine",
+      "FOREIGN": "Étrangère"
+    },
+    "sensitivity": {
+      "ordinary": "Ordinaire",
+      "sensitive": "Sensible",
+      "health": "Santé"
+    },
+    "framework": {
+      "LAW25": "Loi 25",
+      "PIPEDA": "LPRPDE",
+      "PHIPA": "LPRPS"
+    }
+  },
+  "exposure": {
+    "levels": {
+      "LOW": "Faible",
+      "REVIEW": "À évaluer",
+      "ELEVATED": "Élevée"
+    },
+    "axisResidency": "Résidence des données",
+    "axisJurisdiction": "Compétence de l'exploitant",
+    "legend": "Exposition",
+    "reasons": {
+      "canadian_controlled": "Données au Canada avec un exploitant sous contrôle canadien.",
+      "cloud_act_mismatch": "Hébergées au Canada mais exploitées par une entité dont la société mère est américaine — assujetties au CLOUD Act. Une évaluation du transfert est requise.",
+      "foreign_operator_mismatch": "Hébergées au Canada mais exploitées par une entité sous contrôle étranger. Évaluation requise.",
+      "data_abroad_canadian_operator": "Les données sont hébergées à l'extérieur du Canada. Le transfert doit être évalué.",
+      "foreign_residency_and_operator": "Données hébergées à l'extérieur du Canada avec un exploitant étranger."
+    }
+  },
+  "residency": {
+    "title": "Carte de résidence des données",
+    "subtitle": "Résidence physique des données par rapport à la compétence de l'exploitant — la question du CLOUD Act, rendue claire.",
+    "quadrantTitle": "Carte d'exposition",
+    "flowsTitle": "Flux de données",
+    "flowsSubtitle": "Chaque lien entre une catégorie de données et un fournisseur, avec son exposition calculée.",
+    "crossBorderTitle": "Exposition transfrontalière",
+    "crossBorderSubtitle": "Flux nécessitant une évaluation du transfert en vertu de l'art. 17 de la Loi 25.",
+    "noFlows": "Aucun flux de données enregistré pour l'instant.",
+    "noVendors": "Ajoutez d'abord des fournisseurs et des actifs de données pour modéliser les flux.",
+    "addFlow": "Ajouter un flux",
+    "demoNotice": "Mode démo — connectez Supabase pour ajouter ou supprimer des flux de données.",
+    "flowsTo": "vers",
+    "fields": {
+      "asset": "Actif de données",
+      "vendor": "Fournisseur",
+      "purpose": "Fin"
+    },
+    "deleteConfirm": "Supprimer ce flux de données?",
+    "exportHint": "Cette carte constitue le livrable documenté remis au client; l'exportation PDF arrivera à une étape ultérieure."
+  },
+  "vendors": {
+    "title": "Fournisseurs",
+    "subtitle": "Prestataires de services et exploitants, avec la région d'hébergement et la compétence de l'exploitant.",
+    "empty": "Aucun fournisseur enregistré pour l'instant.",
+    "addTitle": "Ajouter un fournisseur",
+    "editTitle": "Modifier le fournisseur",
+    "demoNotice": "Mode démo — connectez Supabase pour ajouter, modifier ou supprimer des fournisseurs.",
+    "fields": {
+      "name": "Nom",
+      "role": "Rôle",
+      "hostingRegion": "Région d'hébergement physique",
+      "parentDomicile": "Domicile de la société mère",
+      "jurisdiction": "Compétence de l'exploitant",
+      "dueDiligence": "Évaluation de diligence raisonnable au dossier",
+      "notes": "Notes"
+    },
+    "jurisdictionHint": "Déduite de la société mère de l'exploitant, et non du lieu d'hébergement des données.",
+    "cloudActHint": "Un exploitant ayant une société mère américaine est assujetti au CLOUD Act, même s'il héberge au Canada.",
+    "ddOnFile": "Au dossier",
+    "ddMissing": "Manquante",
+    "deleteConfirm": "Supprimer ce fournisseur?"
+  },
+  "inventory": {
+    "title": "Inventaire des données",
+    "subtitle": "Catégories de renseignements personnels que votre organisation détient.",
+    "empty": "Aucun actif de données enregistré pour l'instant.",
+    "addTitle": "Ajouter un actif de données",
+    "editTitle": "Modifier l'actif de données",
+    "demoNotice": "Mode démo — connectez Supabase pour ajouter, modifier ou supprimer des actifs de données.",
+    "fields": {
+      "name": "Nom",
+      "description": "Description",
+      "sensitivity": "Sensibilité",
+      "subjects": "Personnes concernées",
+      "purpose": "Fin / base légale",
+      "retention": "Conservation"
+    }
+  },
+  "findings": {
+    "title": "Registre des risques",
+    "subtitle": "Constats indicatifs issus de l'évaluation. Chacun est un signal tant qu'un praticien accrédité ne l'a pas confirmé.",
+    "runAssessment": "Lancer l'évaluation",
+    "demoNotice": "Mode démo — les constats sont évalués en direct et affichés comme indicatifs. Connectez Supabase pour les conserver et les promouvoir.",
+    "empty": "Aucun constat pour l'instant. Lancez une évaluation pour analyser votre programme.",
+    "summary": {
+      "total": "Constats",
+      "indicative": "Indicatifs",
+      "confirmed": "Confirmés"
+    },
+    "status": {
+      "indicative": "Indicatif",
+      "confirmed": "Confirmé"
+    },
+    "severity": {
+      "critical": "Critique",
+      "high": "Élevée",
+      "medium": "Moyenne",
+      "low": "Faible"
+    },
+    "target": {
+      "organization": "Toute l'organisation",
+      "vendor": "Fournisseur",
+      "data_flow": "Flux de données",
+      "data_asset": "Actif de données"
+    },
+    "conditions": {
+      "PRIVACY_OFFICER_NAMED": "Aucun responsable de la protection des renseignements personnels désigné",
+      "VENDOR_DUE_DILIGENCE": "Diligence raisonnable du fournisseur manquante",
+      "CROSS_BORDER_TRANSFER": "Transfert transfrontalier non évalué",
+      "BREACH_RESPONSE": "Réponse aux incidents non documentée",
+      "SAFEGUARDS": "Mesures de protection non documentées",
+      "DATA_INVENTORY": "Inventaire des données incomplet"
+    },
+    "why": {
+      "PRIVACY_OFFICER_NAMED": "Aucun responsable de la protection des renseignements personnels désigné et consigné n'a été trouvé. La Loi 25 exige une personne responsable de la protection des renseignements personnels.",
+      "VENDOR_DUE_DILIGENCE": "Ce fournisseur n'a aucune évaluation de diligence raisonnable documentée au dossier.",
+      "CROSS_BORDER_TRANSFER": "Ce flux comporte une exposition transfrontalière qui n'a pas fait l'objet d'une évaluation d'adéquation.",
+      "BREACH_RESPONSE": "Aucun processus documenté de réponse aux incidents n'a été trouvé.",
+      "SAFEGUARDS": "Les mesures de sécurité n'ont pas été documentées.",
+      "DATA_INVENTORY": "L'inventaire des renseignements personnels semble incomplet."
+    },
+    "obligationLabel": "Obligation",
+    "citationLabel": "Référence",
+    "whyLabel": "Pourquoi ce signalement",
+    "recommendedLabel": "Artefact recommandé",
+    "indicativeBadge": "Indicatif — non encore révisé",
+    "detailBack": "Retour au registre des risques",
+    "noRule": "Aucune référence réglementaire disponible.",
+    "reviewNote": "Ce constat est un signal, et non un verdict. Il ne devient officiel qu'une fois promu par un praticien accrédité (étape suivante).",
+    "addOfficerTitle": "Consigner un responsable de la protection des renseignements personnels",
+    "addOfficerHint": "Consigner une personne responsable résout le constat correspondant à la prochaine évaluation.",
+    "officerFields": {
+      "name": "Nom complet",
+      "title": "Titre",
+      "email": "Courriel"
+    },
+    "officerSave": "Consigner"
+  },
+  "artifacts": {
+    "privacy_officer_record": "Registre de responsabilité du responsable de la protection des renseignements personnels",
+    "vendor_due_diligence": "Dossier de diligence raisonnable du fournisseur",
+    "foreign_transfer_adequacy": "Évaluation de l'adéquation du transfert à l'étranger",
+    "breach_response_runbook": "Guide d'intervention en cas d'incident",
+    "data_inventory": "Inventaire des données",
+    "privacy_impact_assessment": "Évaluation des facteurs relatifs à la vie privée (EFVP)"
+  },
+  "evidence": {
+    "title": "Preuves",
+    "subtitle": "Artefacts défendables rédigés par l'IA à partir des données de votre mandat. Chaque brouillon doit être révisé par un praticien accrédité avant d'être officiel.",
+    "generate": "Générer",
+    "generating": "Rédaction…",
+    "versionsLabel": "Brouillons",
+    "noVersions": "Aucun brouillon pour l'instant.",
+    "versionTag": "v{n}",
+    "view": "Voir",
+    "draftTag": "Brouillon",
+    "approvedTag": "Approuvé",
+    "demoNotice": "Mode démo — connectez Supabase et l'API Anthropic pour générer des brouillons d'artefacts.",
+    "aiNoticeShort": "Généré par Claude à partir de vos données; révision requise.",
+    "aiNotice": "Ce brouillon a été généré par Claude à partir des données de votre mandat. Il n'est pas officiel et doit être révisé par un praticien accrédité. Il s'agit de documentation et de recommandations seulement — et non d'un avis juridique.",
+    "back": "Retour aux preuves",
+    "languageEn": "EN",
+    "languageFr": "FR",
+    "descriptions": {
+      "privacy_impact_assessment": "Évaluation des facteurs relatifs à la vie privée (EFVP) couvrant le traitement, les risques et les mesures d'atténuation.",
+      "data_inventory": "Un registre des renseignements personnels que détient votre organisation.",
+      "vendor_due_diligence": "Un dossier de diligence raisonnable pour vos fournisseurs et exploitants.",
+      "foreign_transfer_adequacy": "Une évaluation de l'adéquation du transfert pour chaque flux transfrontalier signalé (art. 17 de la Loi 25).",
+      "breach_response_runbook": "Un guide d'intervention en cas d'incident conforme à l'art. 3.5 de la Loi 25.",
+      "privacy_officer_record": "Un registre de responsabilité pour le responsable désigné (art. 3.1 à 3.3 de la Loi 25)."
+    }
+  },
+  "audit": {
+    "title": "Préparation à l'audit",
+    "subtitle": "Réviseurs accrédités, approbations immuables et journal infalsifiable.",
+    "reviewersTitle": "Réviseurs",
+    "reviewersSubtitle": "Praticiens accrédités pouvant promouvoir des constats et approuver des artefacts.",
+    "noReviewers": "Aucun réviseur enregistré pour l'instant.",
+    "addReviewer": "Ajouter un réviseur",
+    "reviewerFields": {
+      "name": "Nom complet",
+      "credentialType": "Accréditation (p. ex. CISA, CRISC)",
+      "credentialId": "Numéro d'accréditation"
+    },
+    "logTitle": "Journal d'audit",
+    "logSubtitle": "En ajout seulement et chaîné par hachage. En lecture seule.",
+    "chainValid": "Journal d'audit vérifié — {count} entrées, chaîne intègre.",
+    "chainInvalid": "Échec de la vérification d'intégrité à l'entrée n° {seq}.",
+    "chainEmpty": "Aucune entrée d'audit pour l'instant. Les promotions et approbations apparaîtront ici.",
+    "events": {
+      "finding_confirmed": "Constat confirmé",
+      "artifact_approved": "Artefact approuvé",
+      "reviewer_added": "Réviseur ajouté"
+    },
+    "by": "par",
+    "demoNotice": "Mode démo — connectez Supabase pour gérer les réviseurs et consigner les approbations."
+  },
+  "promote": {
+    "reviewer": "Réviseur",
+    "confirmFinding": "Confirmer le constat",
+    "approveArtifact": "Approuver",
+    "needsReviewer": "Ajoutez un réviseur accrédité dans Préparation à l'audit avant de promouvoir.",
+    "confirmedNote": "Confirmé par un praticien accrédité. Consigné dans le journal d'audit en ajout seulement.",
+    "approvedNote": "Approuvé par un praticien accrédité. Consigné dans le journal d'audit en ajout seulement."
+  },
+  "export": {
+    "label": "Exporter",
+    "pdf": "PDF",
+    "docx": "DOCX"
+  },
+  "auth": {
+    "title": "Connexion à MapleGuard",
+    "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",
+    "noOrgTitle": "Aucune organisation",
+    "noOrgBody": "Votre compte n'est rattaché à aucune organisation. MapleGuard est sur invitation seulement — demandez à votre administrateur de vous ajouter.",
+    "email": "Courriel",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "signingIn": "Connexion en cours…",
+    "notConfigured": "L'authentification n'est pas encore configurée. Définissez vos variables d'environnement Supabase pour activer la connexion.",
+    "error": "Connexion impossible. Vérifiez vos identifiants et réessayez."
+  },
+  "footer": {
+    "note": "Pratique exploitée au Canada. Résidence des données restreinte au mandat.",
+    "region": "Région : {region}"
+  },
+  "common": {
+    "draftBadge": "Brouillon — en attente d'une révision accréditée",
+    "notLegalAdvice": "Documentation et recommandations seulement. Ne constitue pas un avis juridique."
+  }
+}
