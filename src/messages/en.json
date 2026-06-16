@@ -333,6 +333,8 @@
   "auth": {
     "title": "Sign in to MapleGuard",
     "subtitle": "Access your Canadian privacy program workspace.",
+    "noOrgTitle": "No organization yet",
+    "noOrgBody": "Your account isn't linked to an organization. MapleGuard is invite-only — please ask your administrator to add you.",
     "email": "Email",
     "password": "Password",
     "submit": "Sign in",

@@ -3,6 +3,7 @@ import { WorkspaceShell } from "@/components/shell/WorkspaceShell";
 import { Card, SummaryTile } from "@/components/ui/Card";
 import { supabaseEnv } from "@/lib/supabase/config";
 import { getUser } from "@/lib/supabase/server";
+import { getCurrentOrganization } from "@/lib/data/org";
 import { redirect } from "@/i18n/navigation";
 
 export default async function OverviewPage({
@@ -19,6 +20,23 @@ export default async function OverviewPage({
     const user = await getUser();
     if (!user) {
       redirect({ href: "/login", locale });
+    }
+    // Invite-only: an authenticated account with no organization (e.g. one
+    // that self-registered) gets a clear message, not an empty workspace.
+    if (!(await getCurrentOrganization())) {
+      const tAuth = await getTranslations("auth");
+      return (
+        <div className="flex min-h-screen items-center justify-center bg-white px-6">
+          <div className="max-w-sm rounded-card border border-hairline bg-white p-8 text-center shadow-soft">
+            <h1 className="font-display text-2xl font-bold text-ink">
+              {tAuth("noOrgTitle")}
+            </h1>
+            <p className="mt-2 text-sm text-ink-secondary">
+              {tAuth("noOrgBody")}
+            </p>
+          </div>
+        </div>
+      );
     }
   }
 

@@ -33,6 +33,15 @@ Data residency is the core promise, so **provision in a Canadian region**.
    `supabase/migrations/0001_init.sql` → … → `0006_signoff_audit_log.sql`.
 3. From Project Settings → API, copy the **Project URL** and the **anon key**.
 
+### 1a. Keep it invite-only (recommended)
+MapleGuard is invite-only by design — the app exposes only a sign-in form, and
+users are added by an admin (in-app **Users & roles**, or `onboard.sql`). To
+enforce this at the platform level so no one can self-register via the Auth API,
+**disable open email signups** in Supabase → **Authentication → Sign In / Providers
+→ Email → turn off "Allow new users to sign up"**. Admin invites still work. If
+an account ever ends up with no organization, the app shows a clear
+"ask your administrator" message rather than an empty workspace.
+
 ### 2. Anthropic (AI drafting)
 Create an API key at <https://console.anthropic.com>. Drafting defaults to
 `claude-opus-4-8`; override with `ANTHROPIC_MODEL` if needed.

@@ -333,6 +333,8 @@
   "auth": {
     "title": "Connexion à MapleGuard",
     "subtitle": "Accédez à votre espace de programme de confidentialité canadien.",
+    "noOrgTitle": "Aucune organisation",
+    "noOrgBody": "Votre compte n'est rattaché à aucune organisation. MapleGuard est sur invitation seulement — demandez à votre administrateur de vous ajouter.",
     "email": "Courriel",
     "password": "Mot de passe",
     "submit": "Se connecter",
