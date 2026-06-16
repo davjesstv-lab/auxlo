@@ -1,7 +1,7 @@
 import "server-only";
 import { createClient } from "@/lib/supabase/server";
 import { supabaseEnv } from "@/lib/supabase/config";
-import type { UserRole } from "@/lib/domain/types";
+import type { Organization, UserRole } from "@/lib/domain/types";
 
 /**
  * Resolves the authenticated user's organization for write operations.
@@ -72,4 +72,27 @@ export async function getCurrentRole(): Promise<UserRole | null> {
     .eq("id", user.id)
     .maybeSingle();
   return (profile?.role as UserRole) ?? null;
+}
+
+/** Returns the current user's organization, or null when unauthenticated /
+ * unconfigured / not attached to an org. Non-throwing. */
+export async function getCurrentOrganization(): Promise<Organization | null> {
+  if (!supabaseEnv.isConfigured) return null;
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return null;
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("organization_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  if (!profile?.organization_id) return null;
+  const { data: org } = await supabase
+    .from("organizations")
+    .select("*")
+    .eq("id", profile.organization_id)
+    .maybeSingle();
+  return (org as Organization) ?? null;
 }

@@ -12,7 +12,23 @@
     "inventory": "Data inventory",
     "evidence": "Evidence",
     "auditPrep": "Audit prep",
-    "admin": "Users & roles"
+    "admin": "Users & roles",
+    "settings": "Organization"
+  },
+  "settings": {
+    "title": "Organization",
+    "subtitle": "Your organization profile. The preferred language sets the default for new users.",
+    "demoNotice": "Demo mode — connect Supabase to manage your organization.",
+    "fields": {
+      "name": "Name",
+      "sector": "Sector",
+      "headcount": "Headcount",
+      "jurisdiction": "Primary jurisdiction",
+      "language": "Preferred language"
+    },
+    "languageEn": "English",
+    "languageFr": "Français",
+    "save": "Save changes"
   },
   "admin": {
     "title": "Users & roles",

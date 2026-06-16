@@ -12,7 +12,23 @@
     "inventory": "Inventaire des données",
     "evidence": "Preuves",
     "auditPrep": "Préparation à l'audit",
-    "admin": "Utilisateurs et rôles"
+    "admin": "Utilisateurs et rôles",
+    "settings": "Organisation"
+  },
+  "settings": {
+    "title": "Organisation",
+    "subtitle": "Le profil de votre organisation. La langue préférée définit la valeur par défaut pour les nouveaux utilisateurs.",
+    "demoNotice": "Mode démo — connectez Supabase pour gérer votre organisation.",
+    "fields": {
+      "name": "Nom",
+      "sector": "Secteur",
+      "headcount": "Effectif",
+      "jurisdiction": "Compétence principale",
+      "language": "Langue préférée"
+    },
+    "languageEn": "English",
+    "languageFr": "Français",
+    "save": "Enregistrer les modifications"
   },
   "admin": {
     "title": "Utilisateurs et rôles",

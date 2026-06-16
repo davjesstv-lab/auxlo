@@ -10,6 +10,22 @@ export type Framework = "LAW25" | "PIPEDA" | "PHIPA";
 
 export type UserRole = "admin" | "practitioner" | "client";
 
+export type HeadcountBand = "1-19" | "20-49" | "50-99" | "100-200" | "200+";
+
+export type Jurisdiction =
+  | "QC" | "ON" | "BC" | "AB" | "MB" | "SK" | "NS"
+  | "NB" | "NL" | "PE" | "NT" | "NU" | "YT" | "OTHER";
+
+export type Organization = {
+  id: string;
+  name: string;
+  sector: string | null;
+  headcount_band: HeadcountBand | null;
+  primary_jurisdiction: Jurisdiction;
+  preferred_language: "en" | "fr";
+  created_at: string;
+};
+
 export type RuleSeverity = "low" | "medium" | "high" | "critical";
 
 export type ComplianceCondition =

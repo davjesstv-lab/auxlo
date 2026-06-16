@@ -12,7 +12,8 @@ type NavItem = {
     | "inventory"
     | "evidence"
     | "auditPrep"
-    | "admin";
+    | "admin"
+    | "settings";
   href: string;
 };
 
@@ -29,7 +30,11 @@ const NAV_ITEMS: NavItem[] = [
 export function Sidebar({ isAdmin = false }: { isAdmin?: boolean }) {
   const t = useTranslations("nav");
   const items: NavItem[] = isAdmin
-    ? [...NAV_ITEMS, { key: "admin", href: "/admin" }]
+    ? [
+        ...NAV_ITEMS,
+        { key: "admin", href: "/admin" },
+        { key: "settings", href: "/settings" },
+      ]
     : NAV_ITEMS;
   const tApp = useTranslations("app");
   const pathname = usePathname();
