@@ -4,7 +4,7 @@ import { Card, SummaryTile } from "@/components/ui/Card";
 import { supabaseEnv } from "@/lib/supabase/config";
 import { getUser } from "@/lib/supabase/server";
 import { getCurrentOrganization } from "@/lib/data/org";
-import { redirect } from "@/i18n/navigation";
+import { LandingPage } from "@/components/marketing/LandingPage";
 
 export default async function OverviewPage({
   params,
@@ -14,15 +14,16 @@ export default async function OverviewPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // Enforce authentication when Supabase is configured. In demo mode (no env)
-  // the workspace renders so the shell and design system remain previewable.
+  // Show the public marketing landing page to unauthenticated visitors.
+  // Demo mode (no Supabase env) skips straight to the workspace so the
+  // shell and design system remain previewable without credentials.
   if (supabaseEnv.isConfigured) {
     const user = await getUser();
     if (!user) {
-      redirect({ href: "/login", locale });
+      return <LandingPage locale={locale} />;
     }
-    // Invite-only: an authenticated account with no organization (e.g. one
-    // that self-registered) gets a clear message, not an empty workspace.
+    // Invite-only: an authenticated account with no organization gets a
+    // clear message rather than an empty workspace.
     if (!(await getCurrentOrganization())) {
       const tAuth = await getTranslations("auth");
       return (
